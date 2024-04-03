@@ -1,0 +1,61 @@
+version: "3.8"
+services:
+  postgres-db:
+    image: postgres:latest
+    restart: always
+    environment:
+      POSTGRES_DB: root
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+    ports:
+      - "5432:5432"
+    networks:
+      - my-network
+
+  cassandra-db:
+    image: cassandra:latest
+    restart: always
+    ports:
+      - "9042:9042"
+    networks:
+      - my-network
+
+
+networks:
+  my-network:
+    ipam:
+      config:
+        - subnet: 172.24.0.0/16
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
